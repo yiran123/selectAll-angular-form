@@ -1,4 +1,13 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<mat-form-field>
+  <mat-label>Items</mat-label>
+  <mat-select [formControl]="item" multiple>
+    <app-select-all-option
+      [control]="item"
+      [values]="itemlist"
+    ></app-select-all-option>
+
+    <mat-option *ngFor="let item of itemlist" [value]="item">
+      {{ item }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
