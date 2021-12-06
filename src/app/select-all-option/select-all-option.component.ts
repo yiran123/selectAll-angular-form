@@ -39,7 +39,7 @@ export class SelectAllOptionComponent
   @HostBinding('class') cssClass = 'mat-option';
 
   @HostListener('click') toggleSelection(): void {
-    this._selectViaInteraction();
+    // this._selectViaInteraction();
 
     this.control.setValue(this.selected ? this.values : []);
   }
@@ -72,7 +72,7 @@ export class SelectAllOptionComponent
   ngOnDestroy(): void {
     super.ngOnDestroy();
 
-    this.unsubscribe.next(true);
+    this.unsubscribe.next(undefined);
     this.unsubscribe.complete();
   }
 
